@@ -5,9 +5,10 @@
  * @format
  */
 
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
+  RefreshControl,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -30,6 +31,9 @@ import FlatListComponent from './components/study/FlatListComponent';
 import ImageComponent from './components/study/ImageComponent';
 import ImageBackgroundComponent from './components/study/ImageBackgroundComponent';
 import KeyboardAvoidingViewComponent from './components/study/KeyboardAvoidingViewComponent';
+import ModalComponent from './components/study/ModalComponent';
+import PressableComponent from './components/study/PressableComponent';
+import RefreshControlComponent from './components/study/RefreshControlComponent';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -68,6 +72,15 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000)
+  }, [])
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -75,10 +88,16 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         // horizontal={true}
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         {/* <Header /> */}
+        {/* <RefreshControlComponent /> */}
+        <PressableComponent />
+        <ModalComponent />
         <KeyboardAvoidingViewComponent />
         <ActivityIndicatorComponent />
         <ButtonComponent />
