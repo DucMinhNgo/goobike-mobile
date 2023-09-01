@@ -27,6 +27,9 @@ import {
 import ActivityIndicatorComponent from './components/study/ActivityIndicatorComponent';
 import ButtonComponent from './components/study/BottonComponent';
 import FlatListComponent from './components/study/FlatListComponent';
+import ImageComponent from './components/study/ImageComponent';
+import ImageBackgroundComponent from './components/study/ImageBackgroundComponent';
+import KeyboardAvoidingViewComponent from './components/study/KeyboardAvoidingViewComponent';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -76,9 +79,12 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         {/* <Header /> */}
+        <KeyboardAvoidingViewComponent />
         <ActivityIndicatorComponent />
         <ButtonComponent />
         {/* <FlatListComponent /> */}
+        <ImageComponent />
+        <ImageBackgroundComponent />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
