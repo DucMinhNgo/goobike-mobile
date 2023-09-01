@@ -34,6 +34,9 @@ import KeyboardAvoidingViewComponent from './components/study/KeyboardAvoidingVi
 import ModalComponent from './components/study/ModalComponent';
 import PressableComponent from './components/study/PressableComponent';
 import RefreshControlComponent from './components/study/RefreshControlComponent';
+import SectionListComponent from './components/study/SectionListComponent';
+import StatusBarComponent from './components/study/StatusBarComponent';
+import SwitchComponent from './components/study/SwitchComponent';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -96,6 +99,9 @@ function App(): JSX.Element {
         style={backgroundStyle}>
         {/* <Header /> */}
         {/* <RefreshControlComponent /> */}
+        {/* <SectionListComponent /> */}
+        <SwitchComponent />
+        <StatusBarComponent />
         <PressableComponent />
         <ModalComponent />
         <KeyboardAvoidingViewComponent />
