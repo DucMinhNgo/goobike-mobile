@@ -37,6 +37,8 @@ import RefreshControlComponent from './components/study/RefreshControlComponent'
 import SectionListComponent from './components/study/SectionListComponent';
 import StatusBarComponent from './components/study/StatusBarComponent';
 import SwitchComponent from './components/study/SwitchComponent';
+import TextComponent from './components/study/TextComponent';
+import TextInputComponent from './components/study/TextInputComponent';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -100,6 +102,8 @@ function App(): JSX.Element {
         {/* <Header /> */}
         {/* <RefreshControlComponent /> */}
         {/* <SectionListComponent /> */}
+        <TextInputComponent />
+        <TextComponent />
         <SwitchComponent />
         <StatusBarComponent />
         <PressableComponent />
